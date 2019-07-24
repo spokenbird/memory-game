@@ -1,0 +1,172 @@
+$function-blue: #569cb3;
+$log-orange: #ce723b;
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Work Sans', sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  padding-top: 50px;
+}
+
+.navbar {
+  background-color: #1e1e1e;
+  .navbar-brand {
+    color: $function-blue;
+    img {
+      margin: 4px 20px 0 30px;
+    }
+  }
+
+  li, .navbar-brand {
+    font-size: 1.5rem;
+
+    a {
+      color: $log-orange;
+    }
+
+    a:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.jumbotron {
+  background: rgb(30, 30, 30);
+  background: -moz-linear-gradient(180deg, rgba(30, 30, 30, 1) 0%, rgba(46, 46, 46, 1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(30, 30, 30, 1) 0%, rgba(46, 46, 46, 1) 100%);
+  background: linear-gradient(180deg, rgba(30, 30, 30, 1) 0%, rgba(46, 46, 46, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1e1e1e", endColorstr="#2e2e2e", GradientType=1);
+  font-size: 2vw;
+  height: 100vh;
+  color: #fff;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+
+  .jumbo-p {
+    align-self: center;
+    width: 80%;
+
+    .blinking-cursor {
+      -webkit-animation: 1s blink step-end infinite;
+      -moz-animation: 1s blink step-end infinite;
+      -ms-animation: 1s blink step-end infinite;
+      -o-animation: 1s blink step-end infinite;
+      animation: 1s blink step-end infinite;
+    }
+
+    @keyframes "blink" {
+
+      from,
+      to {
+        color: transparent;
+      }
+
+      50% {
+        color: white;
+      }
+    }
+
+    @-moz-keyframes blink {
+
+      from,
+      to {
+        color: transparent;
+      }
+
+      50% {
+        color: white;
+      }
+    }
+
+    @-webkit-keyframes "blink" {
+
+      from,
+      to {
+        color: transparent;
+      }
+
+      50% {
+        color: white;
+      }
+    }
+
+    @-ms-keyframes "blink" {
+
+      from,
+      to {
+        color: transparent;
+      }
+
+      50% {
+        color: white;
+      }
+    }
+
+    @-o-keyframes "blink" {
+
+      from,
+      to {
+        color: transparent;
+      }
+
+      50% {
+        color: white;
+      }
+    }
+  }
+}
+
+#contact {
+  margin-bottom: 100px;
+  text-align: center;
+  ul {
+    padding: 0;
+    li {
+      display: inline;
+      margin-right: 20px;
+    }
+    li:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.content {
+  font-size: 1.5rem;
+}
+
+.indent {
+  text-indent: 1em;
+}
+
+.function {
+  color: $function-blue;
+}
+
+.log {
+  color: $log-orange;
+}
+
+.section-header {
+  color: $function-blue;
+  text-align: center;
+}
+
+@import 'fonts';
