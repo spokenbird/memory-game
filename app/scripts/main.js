@@ -1,10 +1,9 @@
-//messages to print
-let messages = [
-  'web developer.',
-  'musician.',
-  'dance facilitator.',
-  'magician.'
-];
+const cards = document.querySelectorAll('.memory-card')
 
-//print messages
-printLetters('changing-text', messages, undefined, undefined, undefined, 2000); //(HTML Element target, messageArr, forward speed, backwards speed, new message delay, message remain time)
+function flipCard() {
+  console.log('click!')
+  this.classList.toggle('flip');
+  console.log(this);
+}
+
+cards.forEach(card => card.addEventListener('click', flipCard));

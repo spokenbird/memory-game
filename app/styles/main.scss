@@ -1,5 +1,47 @@
-.container {
+// Global CSS
+
+body {
+  background: rgb(51, 51, 51);
+  background: -moz-radial-gradient(circle, rgba(51, 51, 51, 1) 0%, rgba(29, 29, 29, 1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(51, 51, 51, 1) 0%, rgba(29, 29, 29, 1) 100%);
+  background: radial-gradient(circle, rgba(51, 51, 51, 1) 0%, rgba(29, 29, 29, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#333333", endColorstr="#1d1d1d", GradientType=1);
+}
+
+.image-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 5px;
+  perspective: 1000;
+}
+
+.flips {
+  max-width: 218px;
+
+}
+
+.memory-card {
+  position: relative;
+  min-height: 218px;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: .5s;
+}
+
+.memory-card:active {
+  transform: scale(.95);
+  transition: .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face, .back-face {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
 }
