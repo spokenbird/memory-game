@@ -1,9 +1,11 @@
-const cards = document.querySelectorAll('.memory-card')
+const cards = document.querySelectorAll('.memory-card');
+const flipCounterDiv = document.querySelector('.flip-counter');
+const flipCount = 0;
 
 function flipCard() {
-  console.log('click!')
   this.classList.toggle('flip');
-  console.log(this);
+  flipCount++;
+  console.log(flipCount);
 }
 
 cards.forEach(card => card.addEventListener('click', flipCard));
