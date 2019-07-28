@@ -45,3 +45,18 @@ body {
 .front-face {
   transform: rotateY(180deg);
 }
+
+#flip-counter {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#flip-count {
+  font-size: 8em;
+  font-family: timberregular;
+  color: orange;
+  margin-bottom: 0;
+}
+
+@import 'fonts';
