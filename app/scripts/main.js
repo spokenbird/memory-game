@@ -1,10 +1,12 @@
 const cards = document.querySelectorAll('.memory-card');
-const flipCounterDiv = document.querySelector('.flip-counter');
-const flipCount = 0;
+const flipCounterP = document.querySelector('#flip-count');
+let flipCount = 0;
+
 
 function flipCard() {
   this.classList.toggle('flip');
   flipCount++;
+  flipCounterP.textContent = flipCount;
   console.log(flipCount);
 }
 
