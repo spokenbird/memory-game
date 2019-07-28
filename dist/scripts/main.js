@@ -1,0 +1,1 @@
+"use strict";var cards=document.querySelectorAll(".memory-card"),flipCounterP=document.querySelector("#flip-count"),flipCount=0;function flipCard(){this.classList.toggle("flip"),flipCount++,flipCounterP.textContent=flipCount}cards.forEach(function(t){return t.addEventListener("click",flipCard)});
