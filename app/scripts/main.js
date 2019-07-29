@@ -110,7 +110,7 @@ function startGame() {
     imageNode.src = shuffledImages[index].src;
     imageNode.alt = shuffledImages[index].alt;
     imageNode.parentElement.dataset.image = shuffledImages[index].alt;
-    imageNode.parentElement.classList.remove('flip');
+    // imageNode.parentElement.classList.remove('flip');
   });
 
   flipCount = 0;
