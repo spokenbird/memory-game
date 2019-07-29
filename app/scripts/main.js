@@ -34,7 +34,7 @@ function flipCard() {
   checkForMatch();
   if (checkWin()) {
     flipCounterSVGCopy.classList.add('win-text');
-    flipCounterTextContainer.classList.removeProperty('fill');
+    flipCounterTextContainer.style.removeProperty('fill');
     setBestScore();
   }
 }
@@ -110,7 +110,7 @@ function startGame() {
     imageNode.src = shuffledImages[index].src;
     imageNode.alt = shuffledImages[index].alt;
     imageNode.parentElement.dataset.image = shuffledImages[index].alt;
-    imageNode.parentElement.style.remove('flip');
+    imageNode.parentElement.classList.remove('flip');
   });
 
   flipCount = 0;
