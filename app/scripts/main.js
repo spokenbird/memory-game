@@ -1,7 +1,9 @@
 const cards = document.querySelectorAll('.memory-card');
-const flipCounterP = document.querySelector('#flip-count');
+const flipCounterTextContainer = document.querySelector('#flip-counter-text');
+let flipCounterText = document.querySelector('#flip-counter-text').firstElementChild.textContent;
 const board = document.querySelector('#image-container');
 const imageNodes = document.querySelectorAll('.front-face');
+const flipCounterSVGCopy = document.querySelector('.svg-text')
 let bestScore = Infinity;
 
 let flipCount = 0;
@@ -16,7 +18,7 @@ function flipCard() {
   this.classList.add('flip');
 
   flipCount++;
-  flipCounterP.textContent = flipCount;
+  document.querySelector('#flip-counter-text').firstElementChild.textContent = flipCount;
 
   if (!cardIsFlipped) {
     // first click
@@ -25,14 +27,16 @@ function flipCard() {
 
     return;
   }
-    // second click
-    cardIsFlipped = false;
-    secondCard = this;
+  // second click
+  cardIsFlipped = false;
+  secondCard = this;
 
-    checkForMatch();
-    if (checkWin()) {
-      setBestScore();
-    } 
+  checkForMatch();
+  if (checkWin()) {
+    flipCounterSVGCopy.classList.add('win-text');
+    flipCounterTextContainer.style.removeProperty('fill');
+    setBestScore();
+  }
 }
 
 function checkForMatch() {
@@ -46,7 +50,7 @@ function disableFlipCard() {
   secondCard.removeEventListener('click', flipCard);
 
   resetPairs();
-} 
+}
 
 function unflipCards() {
   lockBoard = true;
@@ -55,12 +59,12 @@ function unflipCards() {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
 
-    resetPairs(); 
+    resetPairs();
   }, 1000)
 }
 
 function resetPairs() {
-[cardIsFlipped, lockBoard] = [false, false];
+  [cardIsFlipped, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
 }
 
@@ -70,9 +74,15 @@ function shuffle(array) {
 
   while (imagesCopy.length > 0) {
     const randomIndex = Math.floor(Math.random() * imagesCopy.length);
-    const { src, alt } = imagesCopy.splice(randomIndex, 1)[0]
-    shuffled.push({ src, alt });
-    
+    const {
+      src,
+      alt
+    } = imagesCopy.splice(randomIndex, 1)[0]
+    shuffled.push({
+      src,
+      alt
+    });
+
   }
 
   return shuffled;
@@ -104,8 +114,9 @@ function startGame() {
   });
 
   resetPairs();
+  flipCounterSVGCopy.classList.remove('win-text');
   flipCount = 0;
-  flipCounterP.textContent = flipCount;
+  flipCounterText = flipCount;
   cards.forEach(card => card.addEventListener('click', flipCard));
 }
 
@@ -116,7 +127,7 @@ function checkWin() {
 document.querySelector('.btn').addEventListener('click', startGame);
 
 
-window.onload = function() {
+window.onload = function () {
   startGame();
   getAndSetBestScore();
 }

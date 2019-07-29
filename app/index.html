@@ -31,7 +31,7 @@
       </div>
       <div class="col-sm-8 text-right">
         <div class="best-score-container">
-          <span class="best-score-text">BEST SCORE:</span><span class="best-score">Play a Game!</span>
+          <span class="best-score-text">BEST SCORE:</span><span class="best-score">0</span>
         </div>
         <button class="btn btn-outline-primary">
           <span>Start New Game</span>
@@ -89,9 +89,21 @@
       <img class="front-face img-fluid" src="images/woah-bro.gif" alt="woah" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div id="flip-counter">
-      <p id="flip-count">0</p>
-    </div>
+    <svg viewBox="0 0 218 218">
+
+        <!-- Symbol -->
+        <symbol id="flip-counter-text">
+          <text text-anchor="middle"
+                  x="50%" y="50%" dy=".35em">
+              0
+           </text>
+        </symbol>
+      
+        <!-- Duplicate symbols -->
+        <use xlink:href="#flip-counter-text" class="svg-text"
+                  ></use>
+      
+      </svg>
     <div class="memory-card" data-image="marshmellow">
       <img class="front-face img-fluid" src="images/rubberband-marshmellow.gif" alt="marshmellow" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />

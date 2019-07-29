@@ -109,7 +109,47 @@ body {
 }
 
 .img-fluid {
-  border-radius: 5px;
+  border-radius: 10px;
+}
+
+#flip-counter-text {
+  font-size: 8rem;
+  font-family: timberregular;
+  fill:#e05b03;
+}
+
+
+// TESTING
+
+$colors: #e05b03;
+$max: length($colors);
+$dash: 15;
+$dash-gap: 5;
+$dash-space: 5;
+$time: 1s;
+$time-step: $time/$max;
+
+.win-text {
+  fill: none;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-dasharray: $dash $dash-space;
+  stroke-dashoffset: 0;
+  animation: stroke $time infinite linear;
+
+  @for $item from 1 through $max {
+    &:nth-child(#{$max}n + #{$item}) {
+      $color: nth($colors, $item);
+      stroke: $color;
+      animation-delay: -($time-step * $item);
+    }
+  }
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -($dash + $dash-gap) * $max;
+  }
 }
 
 @import 'fonts';
