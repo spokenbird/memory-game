@@ -8,9 +8,10 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#333333", endColorstr="#1d1d1d", GradientType=1);
 }
 
-.image-container {
+#image-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 5px;
   perspective: 1000;
 }
@@ -26,6 +27,7 @@ body {
   transform: scale(1);
   transform-style: preserve-3d;
   transition: .5s;
+  height: fit-content;
 }
 
 .memory-card:active {
@@ -37,7 +39,8 @@ body {
   transform: rotateY(180deg);
 }
 
-.front-face, .back-face {
+.front-face,
+.back-face {
   position: absolute;
   backface-visibility: hidden;
 }
@@ -55,8 +58,58 @@ body {
 #flip-count {
   font-size: 8em;
   font-family: timberregular;
-  color: orange;
+  color: #e05b03;
   margin-bottom: 0;
+}
+
+.header {
+  color: #e05b03;
+  font-family: timberregular;
+  font-size: 4em;
+  line-height: 96px;
+}
+
+.btn-outline-primary {
+  color: #e05b03;
+  border-color: #e05b03;
+  border: solid 2px;
+  margin-top: -35px;
+  margin-left: 30px;
+  font-size: 2.5rem;
+  line-height: 40px;
+  font-family: timberregular;
+  transform: scale(1);
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.show>.btn-outline-primary.dropdown-toggle {
+  border-color: #03587f;
+  background-color: transparent;
+  transform: scale(.95);
+  transition: .2s;
+  color: #4c93c7;
+}
+
+.btn-outline-primary:hover {
+  border-color: #03587f;
+  background-color: transparent;
+  color: #4c93c7;
+}
+
+#reset {
+  max-height: 30px;
+}
+
+.best-score-container {
+  color: #e05b03;
+  display: inline-block;
+  font-family: 'timberregular';
+  font-size: 4em;
+}
+
+.img-fluid {
+  border-radius: 5px;
 }
 
 @import 'fonts';

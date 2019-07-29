@@ -20,106 +20,123 @@
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
+  
 </head>
 
 <body>
-  <div class="container  image-container">
-    <div class="memory-card" data-framework="aurelia">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h1 class="header">Memorize Me</h1>
+      </div>
+      <div class="col-sm-8 text-right">
+        <div class="best-score-container">
+          <span class="best-score-text">BEST SCORE:</span><span class="best-score">Play a Game!</span>
+        </div>
+        <button class="btn btn-outline-primary">
+          <span>Start New Game</span>
+          <img id="reset" src="images/reset-icon.png" alt="reset-icon" />
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="image-container">
+    <div class="memory-card" data-image="banana">
       <img class="front-face img-fluid" src="images/banana-dude.gif" alt="banana" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="aurelia">
+    <div class="memory-card" data-image="banana">
       <img class="front-face img-fluid" src="images/banana-dude.gif" alt="banana" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="vue">
+    <div class="memory-card" data-image="chocolate">
       <img class="front-face img-fluid" src="images/chocolate-door-knob.gif" alt="chocolate" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="vue">
+    <div class="memory-card" data-image="chocolate">
       <img class="front-face img-fluid" src="images/chocolate-door-knob.gif" alt="chocolate" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="angular">
+    <div class="memory-card" data-image="dog">
       <img class="front-face img-fluid" src="images/dog-lips.gif" alt="dog" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="angular">
+    <div class="memory-card" data-image="dog">
       <img class="front-face img-fluid" src="images/dog-lips.gif" alt="dog" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="ember">
+    <div class="memory-card" data-image="fake">
       <img class="front-face img-fluid" src="images/fake-legs.gif" alt="fake" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="ember">
+    <div class="memory-card" data-image="fake">
       <img class="front-face img-fluid" src="images/fake-legs.gif" alt="fake" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="backbone">
+    <div class="memory-card" data-image="cat">
       <img class="front-face img-fluid" src="images/hover-cat.gif" alt="cat" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="backbone">
+    <div class="memory-card" data-image="cat">
       <img class="front-face img-fluid" src="images/hover-cat.gif" alt="cat" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="react">
+    <div class="memory-card" data-image="woah">
       <img class="front-face img-fluid" src="images/woah-bro.gif" alt="woah" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="react">
+    <div class="memory-card" data-image="woah">
       <img class="front-face img-fluid" src="images/woah-bro.gif" alt="woah" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
     <div id="flip-counter">
       <p id="flip-count">0</p>
     </div>
-    <div class="memory-card" data-framework="marshmellow">
+    <div class="memory-card" data-image="marshmellow">
       <img class="front-face img-fluid" src="images/rubberband-marshmellow.gif" alt="marshmellow" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="marshmellow">
+    <div class="memory-card" data-image="marshmellow">
       <img class="front-face img-fluid" src="images/rubberband-marshmellow.gif" alt="marshmellow" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="peeler">
+    <div class="memory-card" data-image="peeler">
       <img class="front-face img-fluid" src="images/not-the-peeler.gif" alt="peeler" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="peeler">
+    <div class="memory-card" data-image="peeler">
       <img class="front-face img-fluid" src="images/not-the-peeler.gif" alt="peeler" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="um">
+    <div class="memory-card" data-image="um">
       <img class="front-face img-fluid" src="images/um.gif" alt="um" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="um">
+    <div class="memory-card" data-image="um">
       <img class="front-face img-fluid" src="images/um.gif" alt="um" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="wtf">
+    <div class="memory-card" data-image="wtf">
       <img class="front-face img-fluid" src="images/wtf.gif" alt="wtf" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="wtf">
+    <div class="memory-card" data-image="wtf">
       <img class="front-face img-fluid" src="images/wtf.gif" alt="wtf" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="balls">
+    <div class="memory-card" data-image="balls">
       <img class="front-face img-fluid" src="images/blue-balls.gif" alt="balls" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="balls">
+    <div class="memory-card" data-image="balls">
       <img class="front-face img-fluid" src="images/blue-balls.gif" alt="balls" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="turkey">
+    <div class="memory-card" data-image="turkey">
       <img class="front-face img-fluid" src="images/turkey.gif" alt="turkey" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
-    <div class="memory-card" data-framework="turkey">
+    <div class="memory-card" data-image="turkey">
       <img class="front-face img-fluid" src="images/turkey.gif" alt="turkey" />
       <img class="back-face img-fluid" src="images/back.jpg" alt="back" />
     </div>
