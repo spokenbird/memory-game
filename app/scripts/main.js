@@ -34,7 +34,7 @@ function flipCard() {
   checkForMatch();
   if (checkWin()) {
     flipCounterSVGCopy.classList.add('win-text');
-    flipCounterTextContainer.style.removeProperty('fill');
+    flipCounterTextContainer.classList.removeProperty('fill');
     setBestScore();
   }
 }
@@ -110,13 +110,13 @@ function startGame() {
     imageNode.src = shuffledImages[index].src;
     imageNode.alt = shuffledImages[index].alt;
     imageNode.parentElement.dataset.image = shuffledImages[index].alt;
-    imageNode.parentElement.classList.remove('flip');
+    imageNode.parentElement.classList.add('flip');
   });
 
+  flipCount = 0;
+  document.querySelector('#flip-counter-text').firstElementChild.textContent = 0;
   resetPairs();
   flipCounterSVGCopy.classList.remove('win-text');
-  flipCount = 0;
-  flipCounterText = flipCount;
   cards.forEach(card => card.addEventListener('click', flipCard));
 }
 
